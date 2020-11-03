@@ -40,6 +40,10 @@
       apt:
         name: python3-pip
 
+    - name: Install leiningen
+      apt:
+        name: leiningen
+
     - name: Install nvm
       become: true
       become_user: vakiovale
