@@ -1,0 +1,47 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Upgrade packages 
+      apt:
+        name: "*"
+        update_cache: yes
+        state: latest
+
+    - name: Install curl
+      apt:
+        name: curl
+
+    - name: Install htop
+      apt:
+        name: htop
+
+    - name: Install vim
+      apt:
+        name: vim
+
+    - name: Install emacs
+      apt:
+        name: emacs
+
+    - name: Install git
+      apt:
+        name: git
+
+    - name: Install openjdk 11
+      apt:
+        name: "openjdk-11-*"
+
+    - name: Install maven
+      apt:
+        name: maven
+
+    - name: Install pip3
+      apt:
+        name: python3-pip
+
+    - name: Install nvm
+      become: true
+      become_user: vakiovale
+      shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash

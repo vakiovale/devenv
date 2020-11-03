@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install docker deps 
+      script: install_docker_deps.sh
+
+    - name: Docker key
+      apt_key: 
+        url: "https://download.docker.com/linux/ubuntu/gpg"
+
+    - name: Add docker repo
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable"
+        state: present
+        update_cache: yes
+
+    - name: Install docker-ce
+      apt:
+        name: docker-ce
+
+    - name: Install docker-ce-cli
+      apt:
+        name: docker-ce-cli
+
+    - name: Install containerd.io 
+      apt:
+        name: containerd.io 
+
+    - name: Add vakiovale to docker group
+      user:
+        name: vakiovale 
+        group: docker
+
+    - name: Install docker-compose
+      become: true
+      become_user: vakiovale 
+      pip:
+        name: docker-compose
