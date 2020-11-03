@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become_user: vakiovale
+  tasks:
+    - name: Configure emacs
+      git:
+        repo: git@github.com:vakiovale/my-emacs-config.git
+        dest: ~/.emacs.d

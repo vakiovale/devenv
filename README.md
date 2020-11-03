@@ -33,6 +33,13 @@ ansible-playbook package-install.yml
 ansible-playbook docker-install.yml
 ```
 
+### Configure dotfiles
+```
+ansible-playbook dotfiles.yml
+```
+
+Fetches and configures dotfiles (emacs, vim, etc.)
+
 ## Optional steps
 
 Some optional steps that I probably want to run as well (or maybe automate these steps in the future?):
