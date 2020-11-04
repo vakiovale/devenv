@@ -38,13 +38,13 @@ ansible-playbook docker-install.yml
 ansible-playbook dotfiles.yml
 ```
 
+Fetches and configures dotfiles (emacs, vim, etc.)
+
 ### Install Clojure
 Leiningen is installed by `package-install.yml`, but Clojure CLI can be installed with
 ```
 ./clojure-install.sh
 ```
-
-Fetches and configures dotfiles (emacs, vim, etc.)
 
 ## Optional steps
 
