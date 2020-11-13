@@ -52,4 +52,5 @@ Some optional steps that I probably want to run as well (or maybe automate these
 
 - Install preferred node version with `nvm install`, for example latest LTS could be installed with `nvm install --lts`
 - Generate ssh keys `ssh-keygen -t ed25519 -C "your_email@example.com`. Use `ssh-add` to add key to authentication agent. Use `ssh-copy-id` to log in to remote server. 
-- Configure git editor `git config --global core.editor emacs`
+- Configure git editor `git config --global core.editor emacsclient -c -a=''`
+
